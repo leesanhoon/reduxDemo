@@ -5,11 +5,12 @@ import {connect} from 'react-redux';
 
 class App extends Component {
   render() {
+    const color = this.props.highlight ? 'red' : 'white'
     return (
       <View style={styleApp.container}>
         <View style={styleApp.header}>
           <Text style={styleApp.appName}>EXAM 1: {'\n'}APP COMPONENT</Text>
-          <Text style={styleApp.value}>{this.props.myValue}</Text>
+          <Text style={{color, fontSize: 40}}>{this.props.myValue}</Text>
         </View>
         <Controller />
       </View>
@@ -18,12 +19,13 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return {myValue: state.value};
+  return {
+    myValue: state.value,
+    highlight: state.highlight,
+  };
 }
 
 export default connect(mapStateToProps)(App);
-
-
 
 const styleApp = StyleSheet.create({
   container: {

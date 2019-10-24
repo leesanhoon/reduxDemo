@@ -1,12 +1,14 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
+import ChangeColor from './ChangeColor'
 
 class Controller extends React.Component {
   render() {
     return (
       <View style={styleController.controller}>
         <Text style={styleController.controllName}>CONTROLLER COMPONENT</Text>
+        <ChangeColor/>
         <View style={styleController.buttonContainer}>
           <TouchableOpacity
             style={styleController.button}
